@@ -1,0 +1,47 @@
+<div id="container">
+
+    <!--    <div>{{abc}}</div>-->
+
+
+
+
+
+<p>
+  <h3>Search <input type="text" ng-model="search"></h3>
+        
+    </p>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+
+                <th>Question</th>
+                <th></th>
+                <th></th>
+               
+              
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr ng-repeat="x in items | filter : search">
+
+
+                <td> {{ x.questionText}}</td>
+                <td><button style="float: right; margin-right: 500px;" type="button" class="btn btn-primary" ng-click="addoption(x)">Add Option</button></td>
+               
+                <td>
+                    <div class="btn-group btn-group-xs" role="group">
+                        <a class="btn btn-default" type="button" title="Edit" ng-click="editquestion(x)"><i class="fa fa-pencil"></i></a>
+                        <a class="btn btn-default" type="button"  title="Delete" ng-click="deletebyid(x)"><i class="fa fa-trash"></i></a>
+                    </div>
+                </td>
+
+            </tr></a>
+        </tbody>
+    </table>
+
+<button style="float: right; margin-right: 100px;" type="button" class="btn btn-primary" ng-click="addquestion(items)">Add question</button>
+
+</div>

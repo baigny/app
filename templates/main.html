@@ -1,0 +1,54 @@
+<div id="container">
+
+    <!--    <div>{{abc}}</div>-->
+
+
+
+<div class="col-md-12">
+			<!--<ul class ="list-inline">-->
+				<a href="#/newPoll" ui-sref="newsurvey">Create a new survey</a>
+               <!--<button  type="button" class="btn btn-primary" ng-click="newpoll()">Submit</button>-->
+				
+			<!--</ul>-->
+		</div>
+
+<p>
+        <input type="text" ng-model="search">
+    </p>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+
+                <th>Survey Name</th>
+				<th>Survey Subtitle</th>
+                <th></th>
+                <th>Instructions</th>
+              
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <!--<a class="btn btn-default" type="button" title="Edit">-->
+            <tr  ng-repeat="x in items | filter : search" ng-click="questions(x)">
+
+
+                <td >{{ x.surveyTitle}}</td>
+				 <td >{{ x.surveySubtitle}}</td>
+                <td ui-sref="quest({id: x.surveyId})" class="pointer"><a>Questions</a></td>
+                <td>{{ x.instructions}}</td>
+                <td>
+                    <div class="btn-group btn-group-xs" role="group">
+                        <a class="btn btn-default" type="button" title="Edit" ng-click="getId(x)"><i class="fa fa-pencil"></i></a>
+                        <a class="btn btn-default" type="button"  title="Delete" ng-click="deletebyid(x);refreshPage()"><i class="fa fa-trash"></i></a>
+                    </div>
+                </td>
+
+            </tr>
+            <!--</a>-->
+        </tbody>
+    </table>
+
+
+
+</div>
